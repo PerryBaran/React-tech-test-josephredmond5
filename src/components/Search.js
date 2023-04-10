@@ -5,18 +5,18 @@ import getImages from "../requests/getImages";
 const Search = ({ setSearchResults }) => {
   const [value, setValue] = useState();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setSearchResults(getImages(value));
+    setSearchResults(await getImages(value));
   };
 
-return (
-    <div className="search">
+  return(
+    <div className="Search">
       <form className="search-form" onSubmit={handleSubmit}>
-        <input
-          className="search-input"
-          type="text"
-          onChange={(e) => setValue(e.target.value)}
+        <input 
+        className="search-input"
+        type="text"
+        onChange={(e) => setValue(e.target.value)}
         />
         <button className="search-btn" type="submit">
           Go!

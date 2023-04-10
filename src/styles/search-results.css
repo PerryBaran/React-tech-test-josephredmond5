@@ -1,0 +1,10 @@
+.card-image {
+    background-color: aqua;
+    display: flexbox;
+    flex-direction: column;
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    position: sticky;
+    margin-left: 20px;
+}
