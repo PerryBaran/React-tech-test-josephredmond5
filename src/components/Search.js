@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import "../styles/search.css";
-import getImages from "../requests/getImages";
+import getImages from "../requests/getImages.js"
 
 const Search = ({ setSearchResults }) => {
   const [value, setValue] = useState();
@@ -10,13 +11,13 @@ const Search = ({ setSearchResults }) => {
     setSearchResults(await getImages(value));
   };
 
-  return(
-    <div className="Search">
+  return (
+    <div className="search">
       <form className="search-form" onSubmit={handleSubmit}>
-        <input 
-        className="search-input"
-        type="text"
-        onChange={(e) => setValue(e.target.value)}
+        <input
+          className="search-input"
+          type="text"
+          onChange={(e) => setValue(e.target.value)}
         />
         <button className="search-btn" type="submit">
           Go!
